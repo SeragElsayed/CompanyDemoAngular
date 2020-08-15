@@ -12,10 +12,11 @@ export class EmployeeService {
 
   findEmployeeLocally(id:number):Employee{
 
-    if(this.allEmployees)
-    return this.allEmployees.find((emp)=>{
-      emp.EmployeeId==id;
-    })
+    // if(this.allEmployees)
+    // return this.allEmployees.find((emp)=>{
+    //   emp.EmployeeId==id;
+    // })
+    return undefined;
   }
   removeEmployeeLocally(id:number){
     let toBeDeletedEmp=this.findEmployeeLocally(id);
@@ -39,7 +40,7 @@ export class EmployeeService {
     return this.myHttp.post(`${this.BaseUrl}`,newEmployee)
   }
   editEmployee(editedEmployee:Employee){
-    return this.myHttp.put(`${this.BaseUrl}`,editedEmployee)
+    return this.myHttp.put(`${this.BaseUrl}/${editedEmployee.EmployeeId}`,editedEmployee)
   }
 
 }

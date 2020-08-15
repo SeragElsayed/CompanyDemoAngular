@@ -14,9 +14,9 @@ import { EditEmployeeComponent } from './Components/edit-employee/edit-employee.
 import { DepartmentService } from './Services/department.service';
 const appRoutes: Routes = [
   // {path: "Employees",component: AppComponent},
+  {path: "Employee/New",component: AddEmployeeComponent},
   {path: "Employee/:employeeId",component: EmployeeDetailsComponent},
   {path: "Employee/Edit/:employeeId",component: EditEmployeeComponent},
-  {path: "Employee/New",component: AddEmployeeComponent},
   {path: "",component: AllEmployeesComponent},
   // {path: "**",component: NotFound},
 ];

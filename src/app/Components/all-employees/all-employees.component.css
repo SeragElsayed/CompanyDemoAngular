@@ -1,0 +1,9 @@
+#AddEmployee,#MyTable{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+#AddEmployee{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
