@@ -1,0 +1,28 @@
+
+  <div *ngIf="myEmployee">
+
+    <div class="form-group">
+      <label for="FirstName">First Name</label>
+      <input  id="FirstName" class="form-control" type="text" [placeholder]="myEmployee.FirstName" readonly>
+  </div>
+  <div class="form-group">
+    <label for="LastName">Last Name</label>
+    <input  id="LastName" class="form-control" type="text" [placeholder]="myEmployee.LastName" readonly>
+  </div>
+  <div class="form-group">
+    <label for="Phone">Phone</label>
+    <input  id="Phone" class="form-control" type="text" [placeholder]="myEmployee.PhoneNumber" readonly>
+  </div>
+  <div class="form-group">
+    <label for="BirthDate">Birth Date</label>
+    <input  id="BirthDate" class="form-control" type="text" [placeholder]="myEmployee.BirthDate" readonly>
+  </div>
+  <div class="form-group">
+    <label for="DepartmentName">Department Name</label>
+    <input  id="DepartmentName" class="form-control" type="text" [placeholder]="myEmployee.DepartmentName" readonly>
+  </div>
+</div>
+
+ 
+  
+

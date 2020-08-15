@@ -1,0 +1,68 @@
+<div *ngIf="myEmployee">
+  <form (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+      <label for="FirstName">First Name</label>
+      <input #FirstName required minlength="2" maxlength="10" name="FirstName" class="form-control" type="text" [(ngModel)]="myEmployee.FirstName" />
+      <div *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)" class="alert alert-danger">
+        <div *ngIf="FirstName.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="FirstName.errors.minlength">
+          Name must be at least 2 characters long.
+        </div>
+        <div *ngIf="FirstName.errors.maxlength">
+          Name must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="LastName">Last Name</label>
+      <input #LastName required minlength="2" maxlength="10" name="LastName" class="form-control" type="text"
+        [(ngModel)]="myEmployee.LastName" />
+        
+      <div *ngIf="LastName.invalid && (LastName.dirty || LastName.touched)" class="alert alert-danger">
+        <div *ngIf="LastName.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="LastName.errors.minlength">
+          Name must be at least 2 characters long.
+        </div>
+        <div *ngIf="LastName.errors.maxlength">
+          Name must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Phone">Phone</label>
+      <input #PhoneNumber required minlength="11" maxlength="11" name="PhoneNumber" class="form-control" type="number" [(ngModel)]="myEmployee.PhoneNumber" />
+      <div *ngIf="PhoneNumber.invalid && (PhoneNumber.dirty || PhoneNumber.touched)" class="alert alert-danger">
+        <div *ngIf="PhoneNumber.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="PhoneNumber.errors.minlength">
+          Name must be at least 11 characters long.
+        </div>
+        <div *ngIf="PhoneNumber.errors.maxlength">
+          Name must be at least 11 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="BirthDate">Birth Date</label>
+      <input name="BirthDate" class="form-control" type="date" [(ngModel)]="myEmployee.BirthDate" />
+    </div>
+    <div class="form-group">
+      <label for="DepartmentName">Department Name</label>
+      <select class="custom-select" (change)="changeDepartment($event)" name="DepartmentName">
+        <!-- <div > -->
+
+          <option *ngFor="let department of myDepartments" [attr.selected]="department.DepartmentName==myEmployee.DepartmentName ? true : null"  [ngValue]="department.DepartmentId" >{{department.DepartmentName}} </option>
+          <!-- <option *ngIf="department.DepartmentId==myEmployee.DepartmentId" selected [ngValue]="department.DepartmentId" >{{department.DepartmentName}} </option> -->
+          <!-- <option *ngIf="department.DepartmentId!=myEmployee.DepartmentId"  [ngValue]="department.DepartmentId" >{{department.DepartmentName}} </option> -->
+        <!-- </div> -->
+     </select>
+    </div>
+    <input type="submit" value="Save" />
+    
+  </form>
+</div>

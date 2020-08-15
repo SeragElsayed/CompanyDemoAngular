@@ -1,0 +1,39 @@
+<div>
+  <div class="col-sm-6">
+    <button [routerLink]="['Employee/New']" class="btn btn-success" >
+       <span>Add New Employee</span>
+    </button>
+  </div>
+
+<table class="col-10 MyDiv table  table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allEmployees">
+      <tr  *ngFor ="let employee of allEmployees">
+        <th scope="row">{{employee.EmployeeId}}</th>
+        <td>{{employee.FirstName+ ' ' + employee.LastName}}</td>
+        <td>{{employee.DepartmentName}}</td>
+        <td class="d-flex justify-content-around">
+            <button [routerLink]="['Employee/',employee.EmployeeId]" class="button">
+                <i class="fas fa-info-circle"></i>
+            </button>
+            <button [routerLink]="['Employee/Edit/',employee.EmployeeId]" class="button">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button (click)="OnDelete(employee)" class="button">
+                <i class="fas fa-trash"></i>
+            </button>
+
+
+        </td>
+      </tr>
+     
+    </tbody>
+  </table> 
+</div>
